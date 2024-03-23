@@ -2,36 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on 跃入间隙 | voidreamy</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://voidreaming.github.io/post/</link>
         <description>Recent content in Posts on 跃入间隙 | voidreamy</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 23 Mar 2024 23:45:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Test4</title>
-        <link>http://localhost:1313/p/test4/</link>
-        <pubDate>Sat, 23 Mar 2024 23:45:57 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/test4/</guid>
-        <description>&lt;h3 id=&#34;this-is-for-test-use&#34;&gt;This is for test use&lt;/h3&gt;
-</description>
-        </item>
-        <item>
-        <title>Transfer</title>
-        <link>http://localhost:1313/p/transfer/</link>
-        <pubDate>Sat, 23 Mar 2024 19:38:44 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/transfer/</guid>
-        <description>&lt;h1 id=&#34;hugo-from-windows-to-mac&#34;&gt;Hugo from windows to Mac&lt;/h1&gt;
-&lt;p&gt;This is a post recording how to transfer hugo blog site from windows to macos&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Sat, 23 Mar 2024 23:45:57 +0800</lastBuildDate><atom:link href="https://voidreaming.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Math Typesetting</title>
-        <link>http://localhost:1313/p/math-typesetting/</link>
+        <link>https://voidreaming.github.io/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/math-typesetting/</guid>
+        <guid>https://voidreaming.github.io/p/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
@@ -69,11 +50,11 @@ $$&lt;/p&gt;</description>
         </item>
         <item>
         <title>Emoji Support</title>
-        <link>http://localhost:1313/p/emoji-support/</link>
+        <link>https://voidreaming.github.io/p/emoji-support/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/emoji-support/</guid>
-        <description>&lt;img src="http://localhost:1313/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
+        <guid>https://voidreaming.github.io/p/emoji-support/</guid>
+        <description>&lt;img src="https://voidreaming.github.io/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
 &lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
