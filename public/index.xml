@@ -2,71 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>跃入间隙 | voidreamy</title>
-        <link>http://localhost:1313/</link>
+        <link>https://voidreaming.github.io/</link>
         <description>Recent content on 跃入间隙 | voidreamy</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sun, 24 Mar 2024 00:14:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>T2</title>
-        <link>http://localhost:1313/p/t2/</link>
-        <pubDate>Sun, 24 Mar 2024 00:14:48 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/t2/</guid>
-        <description>&lt;p&gt;22222&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>T1</title>
-        <link>http://localhost:1313/p/t1/</link>
-        <pubDate>Sun, 24 Mar 2024 00:09:57 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/t1/</guid>
-        <description>&lt;p&gt;haohaohao&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Test4</title>
-        <link>http://localhost:1313/p/test4/</link>
-        <pubDate>Sat, 23 Mar 2024 23:45:57 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/test4/</guid>
-        <description>&lt;h3 id=&#34;this-is-for-test-use&#34;&gt;This is for test use&lt;/h3&gt;
-</description>
-        </item>
-        <item>
-        <title>Transfer</title>
-        <link>http://localhost:1313/p/transfer/</link>
-        <pubDate>Sat, 23 Mar 2024 19:38:44 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/transfer/</guid>
-        <description>&lt;h1 id=&#34;hugo-from-windows-to-mac&#34;&gt;Hugo from windows to Mac&lt;/h1&gt;
-&lt;p&gt;This is a post recording how to transfer hugo blog site from windows to macos&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Test</title>
-        <link>http://localhost:1313/test/</link>
-        <pubDate>Mon, 29 Jan 2024 15:58:32 +0800</pubDate>
-        
-        <guid>http://localhost:1313/test/</guid>
-        <description>&lt;p&gt;hello world!&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Sun, 24 Mar 2024 00:14:48 +0800</lastBuildDate><atom:link href="https://voidreaming.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档 | Archives</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://voidreaming.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://voidreaming.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>http://localhost:1313/p/math-typesetting/</link>
+        <link>https://voidreaming.github.io/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/math-typesetting/</guid>
+        <guid>https://voidreaming.github.io/p/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
@@ -104,11 +58,11 @@ $$&lt;/p&gt;</description>
         </item>
         <item>
         <title>Emoji Support</title>
-        <link>http://localhost:1313/p/emoji-support/</link>
+        <link>https://voidreaming.github.io/p/emoji-support/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/emoji-support/</guid>
-        <description>&lt;img src="http://localhost:1313/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
+        <guid>https://voidreaming.github.io/p/emoji-support/</guid>
+        <description>&lt;img src="https://voidreaming.github.io/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
 &lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
@@ -135,10 +89,10 @@ $$&lt;/p&gt;</description>
         </item>
         <item>
         <title>关于 | About</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
+        <link>https://voidreaming.github.io/%E5%85%B3%E4%BA%8E-about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
+        <guid>https://voidreaming.github.io/%E5%85%B3%E4%BA%8E-about/</guid>
         <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Apache Licence 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
 &lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
@@ -163,10 +117,10 @@ $$&lt;/p&gt;</description>
         </item>
         <item>
         <title>友链 | Links</title>
-        <link>http://localhost:1313/%E5%8F%8B%E9%93%BE-links/</link>
+        <link>https://voidreaming.github.io/%E5%8F%8B%E9%93%BE-links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%8F%8B%E9%93%BE-links/</guid>
+        <guid>https://voidreaming.github.io/%E5%8F%8B%E9%93%BE-links/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -198,10 +152,10 @@ $$&lt;/p&gt;</description>
         </item>
         <item>
         <title>搜索 | Search</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://voidreaming.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://voidreaming.github.io/search/</guid>
         <description></description>
         </item>
         
