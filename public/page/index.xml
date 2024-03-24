@@ -21,26 +21,23 @@
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache Licence 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/%E5%85%B3%E4%BA%8E-about/monv.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;💫 这里是跃入间隙，栖居于计算机和文字交织的wonderland，指学计算机的文学爱好者。&lt;/p&gt;
+&lt;h1 id=&#34;自我陈述&#34;&gt;自我陈述&lt;/h1&gt;
+&lt;p&gt;我不喜欢形容词，不喜欢口号标语，不喜欢言之凿凿，不喜欢大而不当的描述，
+不喜欢过于明晰的事物，我喜欢流动、喜欢象征、喜欢差错、喜欢譬喻。&lt;/p&gt;
+&lt;p&gt;生命是流动着的。&lt;/p&gt;
+&lt;p&gt;一些形容词和标准可以赋予生命以形状和色彩，或许我们都是一团涌动着的水汽，
+在上升和凝结的过程中钻进各式各样的瓦瓦罐罐里，变成不同的形状，拥有不同的颜色。&lt;/p&gt;
+&lt;h1 id=&#34;博客内容陈述&#34;&gt;博客内容陈述&lt;/h1&gt;
+&lt;p&gt;记录计算机学习踩坑之旅，另外是大量的生活分享和创造输出。&lt;/p&gt;
+&lt;h1 id=&#34;兴趣&#34;&gt;兴趣&lt;/h1&gt;
+&lt;p&gt;典型杂事动物，喜欢阅读，&lt;a class=&#34;link&#34; href=&#34;https://marshy-countess-687.notion.site/e14ae9901c524bdebf3f78de4aff1b47?pvs=4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;个人图书馆&lt;/a&gt;
+喜欢摄影，[个人影集]
+跑步、烘焙、压马路，听摇滚，最喜欢oasis，积极的素食主义实践者。&lt;/p&gt;
+&lt;p&gt;不犯懒、不断尝试新的事物在我看来很酷，
+另外我自认为自己很酷🌝&lt;/p&gt;
 </description>
         </item>
         <item>

@@ -1,7 +1,7 @@
 ---
 title: 关于 | About
-description: Hugo, the world's fastest framework for building websites
-date: "2019-02-28"
+description: 跃入间隙
+date: "2024-03-24"
 aliases:
   - about-us
   - about-hugo
@@ -13,22 +13,34 @@ menu:
     weight: -90
     params:
       icon: user
+math : true
+image : monv.jpg
 ---
+## Intro
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+💫 这里是跃入间隙，栖居于计算机和文字交织的wonderland，指学计算机的文学爱好者。
 
-Hugo makes use of a variety of open source projects including:
 
-- https://github.com/yuin/goldmark
-- https://github.com/alecthomas/chroma
-- https://github.com/muesli/smartcrop
-- https://github.com/spf13/cobra
-- https://github.com/spf13/viper
+## 自我陈述
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+我不喜欢形容词，不喜欢口号标语，不喜欢言之凿凿，不喜欢大而不当的描述，\
+不喜欢过于明晰的事物，我喜欢流动、喜欢象征、喜欢差错、喜欢譬喻。
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
 
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+生命是流动着的。
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+一些形容词和标准可以赋予生命以形状和色彩，或许我们都是一团涌动着的水汽，\
+在上升和凝结的过程中钻进各式各样的瓦瓦罐罐里，变成不同的形状，拥有不同的颜色。
+
+## 博客内容陈述
+
+记录计算机学习踩坑之旅，另外是大量的生活分享和创造输出。
+
+## 兴趣
+
+典型杂事动物，喜欢阅读，[个人图书馆](https://marshy-countess-687.notion.site/e14ae9901c524bdebf3f78de4aff1b47?pvs=4)\
+喜欢摄影，[个人影集]\
+跑步、烘焙、压马路，听摇滚，最喜欢oasis，积极的素食主义实践者。
+
+不犯懒、不断尝试新的事物在我看来很酷，\
+另外我自认为自己很酷🌝
