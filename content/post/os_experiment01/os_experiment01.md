@@ -8,7 +8,7 @@ categories = [
 tags = [
     "OS_experiment",
 ]
-image = "f1c38810bb1e0fb68612707b8bebfd00.jpg"
+image = "img.jpg"
 +++
 
 

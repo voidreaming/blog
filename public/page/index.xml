@@ -7,38 +7,38 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于 | About</title>
+        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
+        <pubDate>Sun, 24 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
+        <description>&lt;img src="http://localhost:1313/%E5%85%B3%E4%BA%8E-about/monv.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;💫 这里是跃入间隙，栖居于计算机和文字交织的wonderland，指学计算机的文学爱好者。&lt;/p&gt;
+&lt;h2 id=&#34;自我陈述&#34;&gt;自我陈述&lt;/h2&gt;
+&lt;p&gt;我不喜欢形容词，不喜欢口号标语，不喜欢言之凿凿，不喜欢大而不当的描述，&lt;br&gt;
+不喜欢过于明晰的事物，我喜欢流动、喜欢象征、喜欢差错、喜欢譬喻。&lt;/p&gt;
+&lt;p&gt;生命是流动着的。&lt;/p&gt;
+&lt;p&gt;一些形容词和标准可以赋予生命以形状和色彩，或许我们都是一团涌动着的水汽，&lt;br&gt;
+在上升和凝结的过程中钻进各式各样的瓦瓦罐罐里，变成不同的形状，拥有不同的颜色。&lt;/p&gt;
+&lt;h2 id=&#34;博客内容陈述&#34;&gt;博客内容陈述&lt;/h2&gt;
+&lt;p&gt;记录计算机学习踩坑之旅，另外是大量的生活分享和创造输出。&lt;/p&gt;
+&lt;h2 id=&#34;兴趣&#34;&gt;兴趣&lt;/h2&gt;
+&lt;p&gt;典型杂事动物，喜欢阅读，&lt;a class=&#34;link&#34; href=&#34;https://marshy-countess-687.notion.site/e14ae9901c524bdebf3f78de4aff1b47?pvs=4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;个人图书馆&lt;/a&gt;&lt;br&gt;
+喜欢摄影，[个人影集]&lt;br&gt;
+跑步、烘焙、压马路，听摇滚，最喜欢oasis，积极的素食主义实践者。&lt;/p&gt;
+&lt;p&gt;不犯懒、不断尝试新的事物在我看来很酷，&lt;br&gt;
+另外我自认为自己很酷🌝&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>归档 | Archives</title>
         <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/archives/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>关于 | About</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
-        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
-        <description>&lt;img src="http://localhost:1313/%E5%85%B3%E4%BA%8E-about/monv.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
-&lt;p&gt;💫 这里是跃入间隙，栖居于计算机和文字交织的wonderland，指学计算机的文学爱好者。&lt;/p&gt;
-&lt;h1 id=&#34;自我陈述&#34;&gt;自我陈述&lt;/h1&gt;
-&lt;p&gt;我不喜欢形容词，不喜欢口号标语，不喜欢言之凿凿，不喜欢大而不当的描述，
-不喜欢过于明晰的事物，我喜欢流动、喜欢象征、喜欢差错、喜欢譬喻。&lt;/p&gt;
-&lt;p&gt;生命是流动着的。&lt;/p&gt;
-&lt;p&gt;一些形容词和标准可以赋予生命以形状和色彩，或许我们都是一团涌动着的水汽，
-在上升和凝结的过程中钻进各式各样的瓦瓦罐罐里，变成不同的形状，拥有不同的颜色。&lt;/p&gt;
-&lt;h1 id=&#34;博客内容陈述&#34;&gt;博客内容陈述&lt;/h1&gt;
-&lt;p&gt;记录计算机学习踩坑之旅，另外是大量的生活分享和创造输出。&lt;/p&gt;
-&lt;h1 id=&#34;兴趣&#34;&gt;兴趣&lt;/h1&gt;
-&lt;p&gt;典型杂事动物，喜欢阅读，&lt;a class=&#34;link&#34; href=&#34;https://marshy-countess-687.notion.site/e14ae9901c524bdebf3f78de4aff1b47?pvs=4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;个人图书馆&lt;/a&gt;
-喜欢摄影，[个人影集]
-跑步、烘焙、压马路，听摇滚，最喜欢oasis，积极的素食主义实践者。&lt;/p&gt;
-&lt;p&gt;不犯懒、不断尝试新的事物在我看来很酷，
-另外我自认为自己很酷🌝&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>友链 | Links</title>
