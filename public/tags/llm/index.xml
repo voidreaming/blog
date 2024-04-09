@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Llm on 跃入间隙 | voidreamy</title>
+        <link>http://localhost:1313/tags/llm/</link>
+        <description>Recent content in Llm on 跃入间隙 | voidreamy</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Tue, 09 Apr 2024 22:44:04 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Docker部署Langchain-Chatchat</title>
+        <link>http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/</link>
+        <pubDate>Tue, 09 Apr 2024 22:44:04 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/</guid>
+        <description>&lt;img src="http://localhost:1313/e9e3a5e09211f2b6940cc15ad5b0f04e.jpg" alt="Featured image of post Docker部署Langchain-Chatchat" /&gt;&lt;p&gt;这一系列博客记录用 docker 部署 &lt;a class=&#34;link&#34; href=&#34;https://github.com/chatchat-space/Langchain-Chatchat&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;langchain-chatchat&lt;/a&gt; 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。&lt;/p&gt;
+&lt;h1 id=&#34;langchain-chatchat项目介绍&#34;&gt;Langchain-Chatchat项目介绍&lt;/h1&gt;
+&lt;p&gt;根据官网介绍：Langchain-Chatchat 是基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。&lt;/p&gt;
+&lt;p&gt;这里的 RAG 技术是为了在避免花费巨大财力人力 fine-tuning 的情况下利用知识库提高大语言模型的准确率。RAG pipeline 如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;参考：https://docs.llamaindex.ai/en/stable/getting_started/concepts/&lt;/p&gt;
+&lt;p&gt;具体分析，RAG 核心技术可以分为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loading&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Indexing&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Storing&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Querying&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evaluation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;即：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image-1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在 loading 阶段，structure data、unstructured data 或者 api output 被加载到统称为 document 的容器里；&lt;/p&gt;
+&lt;p&gt;indexing 阶段将 loading 阶段的 unstructured data 整理为 structured data 并将其向量化存储起来方便后续检索，即embedding data into vector store；&lt;/p&gt;
+&lt;p&gt;querying 阶段将根据 query 返回最合适的回答&lt;/p&gt;
+&lt;p&gt;我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。&lt;/p&gt;
+&lt;h1 id=&#34;docker部署流程&#34;&gt;Docker部署流程&lt;/h1&gt;
+&lt;p&gt;根据项目 &lt;a class=&#34;link&#34; href=&#34;https://github.com/chatchat-space/Langchain-Chatchat/wiki/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2#docker-%E9%83%A8%E7%BD%B2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;wiki&lt;/a&gt;，目前docker 镜像文件已经更新到 &lt;code&gt;0.2.10&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以 &lt;code&gt;nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04&lt;/code&gt; 为基础镜像&lt;/li&gt;
+&lt;li&gt;该版本内置并默认启用一个 Embedding 模型：&lt;code&gt;bge-large-zh-v1.5&lt;/code&gt;，内置并默认启用 &lt;code&gt;ChatGLM3-6B&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;部署该镜像需要提前安装对应的NVIDIA 驱动程序和 CUDA工具包。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NVIDIA Container Toolkit 安装指南&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Installing the NVIDIA Container Toolkit — NVIDIA Container Toolkit 1.14.5 documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;确保前置包安装完成后即可启动镜像。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --gpus all -p 80:8501 registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;首次拉取镜像需要较长时间，建议喝茶等待。&lt;/p&gt;
+&lt;p&gt;拉取完成后查看镜像信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~$ docker images
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;REPOSITORY                                           TAG       IMAGE ID       CREATED         SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;registry.cn-beijing.aliyuncs.com/chatchat/chatchat   0.2.10    ca7876ea20ca   &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; days ago      50.1GB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;getting-started                                      latest    ae9abf3b3b10   &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; months ago    552MB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;voidreaming/getting-started                          latest    ae9abf3b3b10   &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; months ago    552MB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;none&amp;gt;                                               &amp;lt;none&amp;gt;    689e5f5388f9   &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; months ago    552MB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ubuntu                                               latest    174c8c134b2a   &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; months ago    77.9MB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alpine                                               3.16.3    bfe296a52501   &lt;span class=&#34;m&#34;&gt;17&lt;/span&gt; months ago   5.54MB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看容器信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:~$ docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CONTAINER ID   IMAGE                                                       COMMAND                  CREATED       STATUS       PORTS                                                     NAMES
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ece84213a897   registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10   &lt;span class=&#34;s2&#34;&gt;&amp;#34;python3 /data/model…&amp;#34;&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; hours ago   Up &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; hours   22/tcp, 7861/tcp, 0.0.0.0:80-&amp;gt;8501/tcp, :::80-&amp;gt;8501/tcp   goofy_torvalds
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;上述命令中的 &lt;code&gt;-p 80:8501&lt;/code&gt; 把项目 &lt;code&gt;Chatchat WEBUI Server: [http://0.0.0.0:8501](http://0.0.0.0:8501/)&lt;/code&gt;  映射到了服务器默认 80 端口，部署成功后在浏览器打开服务器地址即可看到聊天窗口。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image-2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;另外&lt;strong&gt;API 服务 访问&lt;/strong&gt; http://localhost:7861/docs &lt;/p&gt;
+&lt;h1 id=&#34;坑点&#34;&gt;坑点&lt;/h1&gt;
+&lt;h3 id=&#34;driver-版本&#34;&gt;Driver 版本&lt;/h3&gt;
+&lt;p&gt;由于以本项目镜像以 &lt;code&gt;nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04&lt;/code&gt; 为基础镜像，其中 12.*版本的 cuda 对于 driver 版本有特定要求。参考&lt;a class=&#34;link&#34; href=&#34;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image-3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最开始莫名其妙所有模型都跑在cpu 上，花了好长时间才排查出这个问题 TT&lt;/p&gt;
+&lt;h1 id=&#34;学习归纳&#34;&gt;学习归纳&lt;/h1&gt;
+&lt;p&gt;部署过程中了解到了&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何用 remote-ssh连接服务器。&lt;/li&gt;
+&lt;li&gt;docker 基本使用方法。&lt;/li&gt;
+&lt;li&gt;服务器基本维护和使用。&lt;/li&gt;
+&lt;li&gt;vscode docker 插件打开容器进行编辑。&lt;/li&gt;
+&lt;li&gt;driver 和 cuda 版本相互限制关系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;后续会写博客依次记录这些技术点。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

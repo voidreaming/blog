@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Fri, 05 Apr 2024 12:20:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Apr 2024 22:44:04 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Internship</title>
+        <link>http://localhost:1313/categories/internship/</link>
+        <pubDate>Tue, 09 Apr 2024 22:44:04 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/internship/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Course</title>
         <link>http://localhost:1313/categories/course/</link>
         <pubDate>Fri, 05 Apr 2024 12:20:01 +0800</pubDate>
