@@ -247,7 +247,7 @@
         padding: var(--card-padding);
         pre {
             width: auto;
-            max-height: 20em;
+            max-height: 16em;
         }
     }
   }
@@ -298,8 +298,8 @@
     .highlight:before {
       content: "";
       display: block;
-      background: url(/assets/img/code-header.cvg);
-      height: 32px;
+      background: url(/code-header.svg);
+      height: 16px;
       width: 100%;
       background-size: 57px;
       background-repeat: no-repeat;
@@ -307,5 +307,38 @@
       background-position: -1px 2px;
     }
   }
+
+//   pre code.hljs {
+//     display: block;
+//     overflow-x: auto;
+//     padding: 0 !important;
+//   }
+  
+//  ~\blog\assets\scss\custom.scss
+
+//--------------------------------------------------
+//链接三栏
+@media (min-width: 1024px) {
+    .article-list--compact.links {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; //三个1fr即为三栏,两个1fr则为双栏,以此类推即可.
+      background: none;
+      box-shadow: none;
+      gap: 1rem;
+  
+      article {
+        background: var(--card-background);
+        border: none;
+        box-shadow: var(--shadow-l2);
+        margin-bottom: 8px;
+        border-radius: var(--card-border-radius);
+  
+        &:nth-child(odd) {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  
   
   

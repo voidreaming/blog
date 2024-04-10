@@ -7,13 +7,20 @@
 
 <link rel='canonical' href='http://localhost:1313/'>
 
-<link rel="stylesheet" href="/scss/style.min.69dcf6c889a475ad315f4e9f5bb9b5ce27a0d1eca32d6f51ca6329414c2a6fdb.css"><meta property='og:title' content='跃入间隙 | voidreamy'>
+<link rel="stylesheet" href="/scss/style.min.9c965dbfe8691197238d0aa400dc248fc5846b55a3563b4aec269d9859560a16.css"><meta property='og:title' content='跃入间隙 | voidreamy'>
 <meta property='og:description' content='Example description'>
 <meta property='og:url' content='http://localhost:1313/'>
 <meta property='og:site_name' content='跃入间隙 | voidreamy'>
 <meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-04-09T22:44:04&#43;08:00 '/>
 <meta name="twitter:title" content="跃入间隙 | voidreamy">
 <meta name="twitter:description" content="Example description"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/index.xml">
+<link rel="stylesheet" href="https://npm.elemecdn.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css">
+<script src="https://npm.elemecdn.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>document.addEventListener('DOMContentLoaded', (event) => {document.querySelectorAll('pre code').forEach((el) => {hljs.highlightElement(el);});});</script>
+
+
+  
     </head>
     <body class="">
     <script>
@@ -724,6 +731,37 @@
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
+    
+    <section class="running-time">
+    本博客已稳定运行
+    <span id="runningdays" class="running-days"></span>
+    </section>
+    
+    <section class="totalcount">
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        发表了4篇文章 · 
+        总计0.82k字
+    </section>
+
 </footer>
 
             </main>
@@ -733,6 +771,8 @@
                 
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -743,6 +783,20 @@
 
         document.head.appendChild(customFont);
     }());
+</script>
+
+<script>
+    let s1 = '2023-3-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
 </script>
 
     </body>

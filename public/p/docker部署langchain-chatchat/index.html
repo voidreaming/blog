@@ -16,7 +16,7 @@ Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到
 
 <link rel='canonical' href='http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/'>
 
-<link rel="stylesheet" href="/scss/style.min.69dcf6c889a475ad315f4e9f5bb9b5ce27a0d1eca32d6f51ca6329414c2a6fdb.css"><meta property='og:title' content='Docker部署Langchain-Chatchat'>
+<link rel="stylesheet" href="/scss/style.min.9c965dbfe8691197238d0aa400dc248fc5846b55a3563b4aec269d9859560a16.css"><meta property='og:title' content='Docker部署Langchain-Chatchat'>
 <meta property='og:description' content='这一系列博客记录用 docker 部署 langchain-chatchat 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。
 Langchain-Chatchat项目介绍 根据官网介绍：Langchain-Chatchat 是基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。
 这里的 RAG 技术是为了在避免花费巨大财力人力 fine-tuning 的情况下利用知识库提高大语言模型的准确率。RAG pipeline 如下图：
@@ -44,6 +44,13 @@ querying 阶段将根据 query 返回最合适的回答
 我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。
 Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到 0.2.10"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/e9e3a5e09211f2b6940cc15ad5b0f04e.jpg' />
+<link rel="stylesheet" href="https://npm.elemecdn.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css">
+<script src="https://npm.elemecdn.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>document.addEventListener('DOMContentLoaded', (event) => {document.querySelectorAll('pre code').forEach((el) => {hljs.highlightElement(el);});});</script>
+
+
+  
     </head>
     <body class="
     article-page
@@ -506,29 +513,10 @@ Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到
     
 </a></p>
 <p>确保前置包安装完成后即可启动镜像。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --gpus all -p 80:8501 registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>首次拉取镜像需要较长时间，建议喝茶等待。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d --gpus all -p 80:8501 registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10
+</span></span></code></pre></div><p>首次拉取镜像需要较长时间，建议喝茶等待。</p>
 <p>拉取完成后查看镜像信息</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~$ docker images
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">~$ docker images
 </span></span><span class="line"><span class="cl">REPOSITORY                                           TAG       IMAGE ID       CREATED         SIZE
 </span></span><span class="line"><span class="cl">registry.cn-beijing.aliyuncs.com/chatchat/chatchat   0.2.10    ca7876ea20ca   <span class="m">4</span> days ago      50.1GB
 </span></span><span class="line"><span class="cl">getting-started                                      latest    ae9abf3b3b10   <span class="m">3</span> months ago    552MB
@@ -536,22 +524,11 @@ Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到
 </span></span><span class="line"><span class="cl">&lt;none&gt;                                               &lt;none&gt;    689e5f5388f9   <span class="m">3</span> months ago    552MB
 </span></span><span class="line"><span class="cl">ubuntu                                               latest    174c8c134b2a   <span class="m">3</span> months ago    77.9MB
 </span></span><span class="line"><span class="cl">alpine                                               3.16.3    bfe296a52501   <span class="m">17</span> months ago   5.54MB
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>查看容器信息</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:~$ docker ps
+</span></span></code></pre></div><p>查看容器信息</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">~$ docker ps
 </span></span><span class="line"><span class="cl">CONTAINER ID   IMAGE                                                       COMMAND                  CREATED       STATUS       PORTS                                                     NAMES
 </span></span><span class="line"><span class="cl">ece84213a897   registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10   <span class="s2">&#34;python3 /data/model…&#34;</span>   <span class="m">5</span> hours ago   Up <span class="m">4</span> hours   22/tcp, 7861/tcp, 0.0.0.0:80-&gt;8501/tcp, :::80-&gt;8501/tcp   goofy_torvalds
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>上述命令中的 <code>-p 80:8501</code> 把项目 <code>Chatchat WEBUI Server: [http://0.0.0.0:8501](http://0.0.0.0:8501/)</code>  映射到了服务器默认 80 端口，部署成功后在浏览器打开服务器地址即可看到聊天窗口。</p>
+</span></span></code></pre></div><p>上述命令中的 <code>-p 80:8501</code> 把项目 <code>Chatchat WEBUI Server: [http://0.0.0.0:8501](http://0.0.0.0:8501/)</code>  映射到了服务器默认 80 端口，部署成功后在浏览器打开服务器地址即可看到聊天窗口。</p>
 <p><img src="/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-2.png"
 	width="2000"
 	height="1177"
@@ -703,6 +680,37 @@ Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
+    
+    <section class="running-time">
+    本博客已稳定运行
+    <span id="runningdays" class="running-days"></span>
+    </section>
+    
+    <section class="totalcount">
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        发表了4篇文章 · 
+        总计0.82k字
+    </section>
+
 </footer>
 
 
@@ -791,6 +799,8 @@ Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到
                 
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -801,6 +811,20 @@ Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到
 
         document.head.appendChild(customFont);
     }());
+</script>
+
+<script>
+    let s1 = '2023-3-18'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
 </script>
 
     </body>

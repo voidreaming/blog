@@ -12,6 +12,9 @@ languages:
     weight: 1
     params:
       description: Example description
+      #highlight code modify
+      syntaxHighlighter: "highlight.js"
+
   zh-cn:
     languageName: 中文
     title: 跃入间隙 | voidreamy
@@ -65,7 +68,7 @@ params:
     avatar:
       enabled: true
       local: true
-      src: img/avatar.png
+      src: /img/avatar.png
 
   article:
     math: false
@@ -238,6 +241,6 @@ markup:
     codeFences: true
     guessSyntax: true
     lineNoStart: 1
-    lineNos: true
+    lineNos: false
     lineNumbersInTable: true
     tabWidth: 4

@@ -17,10 +17,10 @@
         &:hover {
             box-shadow: var(--shadow-l2);
         }
-        //modify
+    //modify
     code {
             border-radius: var(--tag-border-radius);
-            font-size: 14px; // Add font size setting for code block
+            font-size: 8px; // Add font size setting for code block
             font-family: var(--code-font-family);
         }
         //  ~\blog\assets\scss\custom.scss
@@ -286,18 +286,18 @@
 //  ~\blog\assets\scss\custom.scss
 
 //----------------------------------------------------------
-//为代码块顶部添加macos样式
-.article-content {
-    .highlight:before {
-      content: "";
-      display: block;
-      background: url(/img/code-header.svg);
-      height: 32px;
-      width: 100%;
-      background-size: 57px;
-      background-repeat: no-repeat;
-      margin-bottom: 5px;
-      background-position: -1px 2px;
-    }
-  }
+// //为代码块顶部添加macos样式
+// .article-content {
+//     .highlight:before {
+//       content: "";
+//       display: block;
+//       background: url(themes/hugo-theme-stack/assets/scss/img/code-header.svg);
+//       height: 32px;
+//       width: 100%;
+//       background-size: 57px;
+//       background-repeat: no-repeat;
+//       margin-bottom: 5px;
+//       background-position: -1px 2px;
+//     }
+//   }
   

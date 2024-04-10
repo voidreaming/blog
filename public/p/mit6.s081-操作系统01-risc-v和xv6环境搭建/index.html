@@ -7,23 +7,23 @@
 RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM 处理器架构而言更为简单。RISC-V 的基础指令只有四十多条，另外更重要的一点，也是与本实验息息相关的一点就是 RISC-V 拥有完整的工具链，开发人员通过工具连=链与 cpu 进行交互，RISC-V社区已经提供了完整的工具链，并且RISC-V基金会持续维护该工具链。当前RISC-V的支持已经合并到主要的工具中，比如编译工具链gcc, 仿真工具qemu等，本次实验也会配置这些工具链。
 安装RISC-V GNU Compiler Toolchain 根据官网介绍，RISC-V GNU Compiler Toolchain 是 RISC-V C 和 C&#43;&#43; 交叉编译器。它支持两种编译模式：通用的 ELF/Newlib 工具链和更复杂的 Linux-ELF/glibc 工具链。
 下载源码：
-1 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain 温馨提示：耗时过长，大约半小时，建议喝茶等待。
+git clone --recursive https://github.com/riscv/riscv-gnu-toolchain 温馨提示：耗时过长，大约半小时，建议喝茶等待。
 按照官方文档，接下来构建 Newlib 交叉编译器。注意到指定安装路径
-1 2 ./configure --prefix=/usr/local/opt/riscv-gnu-toolchain #配置产物路径 make #编译指令 注：.'>
+./configure --prefix=/usr/local/opt/riscv-gnu-toolchain #配置产物路径 make #编译指令 注：.'>
 <title>[mit6.s081] 操作系统01-risc-v和xv6环境搭建</title>
 
 <link rel='canonical' href='http://localhost:1313/p/mit6.s081-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01-risc-v%E5%92%8Cxv6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 
-<link rel="stylesheet" href="/scss/style.min.69dcf6c889a475ad315f4e9f5bb9b5ce27a0d1eca32d6f51ca6329414c2a6fdb.css"><meta property='og:title' content='[mit6.s081] 操作系统01-risc-v和xv6环境搭建'>
+<link rel="stylesheet" href="/scss/style.min.8772d2e32cd34101465cbd93e160c4b6bdef0d9588258bd8116dbae15ff94a89.css"><meta property='og:title' content='[mit6.s081] 操作系统01-risc-v和xv6环境搭建'>
 <meta property='og:description' content='关于在Macos系统下操作系统实验环境搭建的记录。学校的OS实验仿照mit6.s081 实验，所以资料大多参考网上关于mit6.s081 lab的实验安装RISC-V编译器和工具链。
 注明：本实验默认配置好了 vscode 、 homegrew、 git 等工具。
 关于RISC-V编译器和工具链的介绍。 2022 年6月22日举行 WWDC宣布Mac 电脑的 CPU 架构将从 Intel 的 x86 架构换成 Arm 架构，自此，Mac 和 iPhone 以及 ipad 使用同样的架构，统一了操作系统。
 RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM 处理器架构而言更为简单。RISC-V 的基础指令只有四十多条，另外更重要的一点，也是与本实验息息相关的一点就是 RISC-V 拥有完整的工具链，开发人员通过工具连=链与 cpu 进行交互，RISC-V社区已经提供了完整的工具链，并且RISC-V基金会持续维护该工具链。当前RISC-V的支持已经合并到主要的工具中，比如编译工具链gcc, 仿真工具qemu等，本次实验也会配置这些工具链。
 安装RISC-V GNU Compiler Toolchain 根据官网介绍，RISC-V GNU Compiler Toolchain 是 RISC-V C 和 C&#43;&#43; 交叉编译器。它支持两种编译模式：通用的 ELF/Newlib 工具链和更复杂的 Linux-ELF/glibc 工具链。
 下载源码：
-1 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain 温馨提示：耗时过长，大约半小时，建议喝茶等待。
+git clone --recursive https://github.com/riscv/riscv-gnu-toolchain 温馨提示：耗时过长，大约半小时，建议喝茶等待。
 按照官方文档，接下来构建 Newlib 交叉编译器。注意到指定安装路径
-1 2 ./configure --prefix=/usr/local/opt/riscv-gnu-toolchain #配置产物路径 make #编译指令 注：.'>
+./configure --prefix=/usr/local/opt/riscv-gnu-toolchain #配置产物路径 make #编译指令 注：.'>
 <meta property='og:url' content='http://localhost:1313/p/mit6.s081-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01-risc-v%E5%92%8Cxv6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 <meta property='og:site_name' content='跃入间隙 | voidreamy'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='OS_experiment' /><meta property='article:published_time' content='2024-04-05T12:20:01&#43;08:00'/><meta property='article:modified_time' content='2024-04-05T12:20:01&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/mit6.s081-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01-risc-v%E5%92%8Cxv6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/img.jpg' />
@@ -34,10 +34,17 @@ RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM �
 RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM 处理器架构而言更为简单。RISC-V 的基础指令只有四十多条，另外更重要的一点，也是与本实验息息相关的一点就是 RISC-V 拥有完整的工具链，开发人员通过工具连=链与 cpu 进行交互，RISC-V社区已经提供了完整的工具链，并且RISC-V基金会持续维护该工具链。当前RISC-V的支持已经合并到主要的工具中，比如编译工具链gcc, 仿真工具qemu等，本次实验也会配置这些工具链。
 安装RISC-V GNU Compiler Toolchain 根据官网介绍，RISC-V GNU Compiler Toolchain 是 RISC-V C 和 C&#43;&#43; 交叉编译器。它支持两种编译模式：通用的 ELF/Newlib 工具链和更复杂的 Linux-ELF/glibc 工具链。
 下载源码：
-1 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain 温馨提示：耗时过长，大约半小时，建议喝茶等待。
+git clone --recursive https://github.com/riscv/riscv-gnu-toolchain 温馨提示：耗时过长，大约半小时，建议喝茶等待。
 按照官方文档，接下来构建 Newlib 交叉编译器。注意到指定安装路径
-1 2 ./configure --prefix=/usr/local/opt/riscv-gnu-toolchain #配置产物路径 make #编译指令 注：."><meta name="twitter:card" content="summary_large_image">
+./configure --prefix=/usr/local/opt/riscv-gnu-toolchain #配置产物路径 make #编译指令 注：."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/p/mit6.s081-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01-risc-v%E5%92%8Cxv6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/img.jpg' />
+<link rel="stylesheet" href="https://npm.elemecdn.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css">
+<script src="https://npm.elemecdn.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>document.addEventListener('DOMContentLoaded', (event) => {document.querySelectorAll('pre code').forEach((el) => {hljs.highlightElement(el);});});</script>
+
+
+  
     </head>
     <body class="
     article-page
@@ -419,83 +426,31 @@ RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM �
 <h3 id="安装risc-v-gnu-compiler-toolchain">安装<strong>RISC-V GNU Compiler Toolchain</strong></h3>
 <p>根据官网介绍，<strong>RISC-V GNU Compiler Toolchain</strong> 是 RISC-V C 和 C++ 交叉编译器。它支持两种编译模式：通用的 ELF/Newlib 工具链和更复杂的 Linux-ELF/glibc 工具链。</p>
 <p>下载源码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>温馨提示：耗时过长，大约半小时，建议喝茶等待。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
+</span></span></code></pre></div><p>温馨提示：耗时过长，大约半小时，建议喝茶等待。</p>
 <p>按照官方文档，接下来构建 Newlib 交叉编译器。注意到指定安装路径</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/usr/local/opt/riscv-gnu-toolchain    <span class="c1">#配置产物路径</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./configure --prefix<span class="o">=</span>/usr/local/opt/riscv-gnu-toolchain    <span class="c1">#配置产物路径</span>
 </span></span><span class="line"><span class="cl">make                                                       <span class="c1">#编译指令</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注：<code>./configure</code>: 这是一个常用的脚本，用于配置软件包的安装选项。<code>--prefix=/usr/local/opt/riscv-gnu-toolchain</code>: 这个参数指定了安装路径。</p>
+</span></span></code></pre></div><p>注：<code>./configure</code>: 这是一个常用的脚本，用于配置软件包的安装选项。<code>--prefix=/usr/local/opt/riscv-gnu-toolchain</code>: 这个参数指定了安装路径。</p>
 <p>编译过程中可能会遇到权限问题</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span> <span class="n">make</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span> <span class="n">make</span>
 </span></span><span class="line"><span class="cl"><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">stamps</span><span class="o">/</span><span class="n">build</span><span class="o">-</span><span class="n">gdb</span><span class="o">-</span><span class="n">newlib</span> <span class="n">build</span><span class="o">-</span><span class="n">gdb</span><span class="o">-</span><span class="n">newlib</span>
 </span></span><span class="line"><span class="cl"><span class="n">rm</span><span class="p">:</span> <span class="n">build</span><span class="o">-</span><span class="n">gdb</span><span class="o">-</span><span class="n">newlib</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">log</span><span class="p">:</span> <span class="n">Permission</span> <span class="n">denied</span>
 </span></span><span class="line"><span class="cl"><span class="n">rm</span><span class="p">:</span> <span class="n">build</span><span class="o">-</span><span class="n">gdb</span><span class="o">-</span><span class="n">newlib</span><span class="p">:</span> <span class="n">Permission</span> <span class="n">denied</span>
 </span></span><span class="line"><span class="cl"><span class="n">make</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">stamps</span><span class="o">/</span><span class="n">build</span><span class="o">-</span><span class="n">gdb</span><span class="o">-</span><span class="n">newlib</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时用 <code>sudo make</code> 可以解决问题。</p>
+</span></span></code></pre></div><p>此时用 <code>sudo make</code> 可以解决问题。</p>
 <p>另外编译过程中可能会遇到如下报错：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">configure</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">Building</span> <span class="n">GDB</span> <span class="n">requires</span> <span class="n">GMP</span> <span class="mf">4.2</span><span class="o">+</span><span class="p">,</span> <span class="ow">and</span> <span class="n">MPFR</span> <span class="mf">3.1.0</span><span class="o">+.</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">configure</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">Building</span> <span class="n">GDB</span> <span class="n">requires</span> <span class="n">GMP</span> <span class="mf">4.2</span><span class="o">+</span><span class="p">,</span> <span class="ow">and</span> <span class="n">MPFR</span> <span class="mf">3.1.0</span><span class="o">+.</span>
 </span></span><span class="line"><span class="cl"><span class="n">Try</span> <span class="n">the</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">gmp</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">mpfr</span> <span class="n">options</span> <span class="n">to</span> <span class="n">specify</span>
 </span></span><span class="line"><span class="cl"><span class="n">their</span> <span class="n">locations</span><span class="o">.</span>  <span class="n">If</span> <span class="n">you</span> <span class="n">obtained</span> <span class="n">GMP</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">MPFR</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">vendor</span>
 </span></span><span class="line"><span class="cl"><span class="n">distribution</span> <span class="n">package</span><span class="p">,</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">you</span> <span class="n">have</span> <span class="n">installed</span> <span class="n">both</span> <span class="n">the</span> <span class="n">libraries</span>
 </span></span><span class="line"><span class="cl"><span class="ow">and</span> <span class="n">the</span> <span class="n">header</span> <span class="n">files</span><span class="o">.</span>  <span class="n">They</span> <span class="n">may</span> <span class="n">be</span> <span class="n">located</span> <span class="ow">in</span> <span class="n">separate</span> <span class="n">packages</span><span class="o">.</span>
 </span></span><span class="line"><span class="cl"><span class="n">make</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">stamps</span><span class="o">/</span><span class="n">build</span><span class="o">-</span><span class="n">gdb</span><span class="o">-</span><span class="n">newlib</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">1</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>手动安装GMP 和 MPFR 即可。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">gmp</span> <span class="n">mpfr</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>📎若安装上面的包之后编译<code>riscv-gnu-toolchain</code>时gdb模块依然失败，报错： <code>make: *** [stamps/build-gdb-newlib] Error 2</code> 我们可以手动下载</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">riscv64</span><span class="o">-</span><span class="n">elf</span><span class="o">-</span><span class="n">gdb</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><a class="link" href="https://formulae.brew.sh/formula/riscv64-elf-gdb"  target="_blank" rel="noopener"
+</span></span></code></pre></div><p>手动安装GMP 和 MPFR 即可。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">gmp</span> <span class="n">mpfr</span>
+</span></span></code></pre></div><p>📎若安装上面的包之后编译<code>riscv-gnu-toolchain</code>时gdb模块依然失败，报错： <code>make: *** [stamps/build-gdb-newlib] Error 2</code> 我们可以手动下载</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">riscv64</span><span class="o">-</span><span class="n">elf</span><span class="o">-</span><span class="n">gdb</span>
+</span></span></code></pre></div><p><a class="link" href="https://formulae.brew.sh/formula/riscv64-elf-gdb"  target="_blank" rel="noopener"
     >https://formulae.brew.sh/formula/riscv64-elf-gdb
     
     <span style="white-space: nowrap;"><svg width=".7em"
@@ -508,33 +463,11 @@ RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM �
     
 </a></p>
 <p>安装完成后配置环境变量。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">vim</span> <span class="o">~/.</span><span class="n">zshrc</span>                                              <span class="c1">#打开配置文件</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">vim</span> <span class="o">~/.</span><span class="n">zshrc</span>                                              <span class="c1">#打开配置文件</span>
 </span></span><span class="line"><span class="cl"><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&#34;$PATH:/usr/local/opt/riscv-gnu-toolchain/bin&#34;</span>       <span class="c1">#末尾添加此行</span>
 </span></span><span class="line"><span class="cl"><span class="n">source</span> <span class="o">~/.</span><span class="n">zshrc</span>                                            <span class="c1">#使配置生效</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时在命令行输入<code>riscv64-unknown-elf-gcc -v</code>，如果能显示版本信息则代表安装成功。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span> <span class="n">riscv64</span><span class="o">-</span><span class="n">unknown</span><span class="o">-</span><span class="n">elf</span><span class="o">-</span><span class="n">gcc</span> <span class="o">-</span><span class="n">v</span>
+</span></span></code></pre></div><p>此时在命令行输入<code>riscv64-unknown-elf-gcc -v</code>，如果能显示版本信息则代表安装成功。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span> <span class="n">riscv64</span><span class="o">-</span><span class="n">unknown</span><span class="o">-</span><span class="n">elf</span><span class="o">-</span><span class="n">gcc</span> <span class="o">-</span><span class="n">v</span>
 </span></span><span class="line"><span class="cl"><span class="n">Using</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">specs</span><span class="o">.</span>
 </span></span><span class="line"><span class="cl"><span class="n">COLLECT_GCC</span><span class="o">=</span><span class="n">riscv64</span><span class="o">-</span><span class="n">unknown</span><span class="o">-</span><span class="n">elf</span><span class="o">-</span><span class="n">gcc</span>
 </span></span><span class="line"><span class="cl"><span class="n">COLLECT_LTO_WRAPPER</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">riscv</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">toolchain</span><span class="o">/</span><span class="n">libexec</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="n">riscv64</span><span class="o">-</span><span class="n">unknown</span><span class="o">-</span><span class="n">elf</span><span class="o">/</span><span class="mf">13.2.0</span><span class="o">/</span><span class="n">lto</span><span class="o">-</span><span class="n">wrapper</span>
@@ -543,41 +476,17 @@ RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM �
 </span></span><span class="line"><span class="cl"><span class="n">Thread</span> <span class="n">model</span><span class="p">:</span> <span class="n">single</span>
 </span></span><span class="line"><span class="cl"><span class="n">Supported</span> <span class="n">LTO</span> <span class="n">compression</span> <span class="n">algorithms</span><span class="p">:</span> <span class="n">zlib</span>
 </span></span><span class="line"><span class="cl"><span class="n">gcc</span> <span class="n">version</span> <span class="mf">13.2.0</span> <span class="p">(</span><span class="n">gc891d8dc23e1</span><span class="p">)</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="安装-qemu">安装 QEMU</h3>
+</span></span></code></pre></div><h3 id="安装-qemu">安装 QEMU</h3>
 <p>QEMU是一个通用的开源机器模拟器和虚拟化器，用于在 ARM 架构上模拟RISC-V架构的CPU</p>
 <p>直接通过 brew 安装即可</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">qemu</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="最后下载xv6-源码">最后下载xv6 源码</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github.com</span><span class="p">:</span><span class="n">mit</span><span class="o">-</span><span class="n">pdos</span><span class="o">/</span><span class="n">xv6</span><span class="o">-</span><span class="n">riscv</span><span class="o">.</span><span class="n">git</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意xv6-riscv-fall19已经停止维护了，所以要从https://github.com/mit-pdos/xv6-riscv下载。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">qemu</span> 
+</span></span></code></pre></div><h3 id="最后下载xv6-源码">最后下载xv6 源码</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github.com</span><span class="p">:</span><span class="n">mit</span><span class="o">-</span><span class="n">pdos</span><span class="o">/</span><span class="n">xv6</span><span class="o">-</span><span class="n">riscv</span><span class="o">.</span><span class="n">git</span>
+</span></span></code></pre></div><p>注意xv6-riscv-fall19已经停止维护了，所以要从https://github.com/mit-pdos/xv6-riscv下载。</p>
 <p>在项目目录下编译，如果能进入xv6的shell则表示实验环境已搭建成功.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">make</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">make</span>
 </span></span><span class="line"><span class="cl"><span class="n">make</span> <span class="n">qemu</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>到目前为止我们已经完成环境的配置，可以开始调试代码啦～👋</p>
+</span></span></code></pre></div><p>到目前为止我们已经完成环境的配置，可以开始调试代码啦～👋</p>
 
 </section>
 

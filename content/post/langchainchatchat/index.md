@@ -60,7 +60,7 @@ querying 阶段将根据 query 返回最合适的回答
 
 确保前置包安装完成后即可启动镜像。
 
-```bash
+```shell
 docker run -d --gpus all -p 80:8501 registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10
 ```
 
@@ -68,7 +68,7 @@ docker run -d --gpus all -p 80:8501 registry.cn-beijing.aliyuncs.com/chatchat/ch
 
 拉取完成后查看镜像信息
 
-```bash
+```shell
 ~$ docker images
 REPOSITORY                                           TAG       IMAGE ID       CREATED         SIZE
 registry.cn-beijing.aliyuncs.com/chatchat/chatchat   0.2.10    ca7876ea20ca   4 days ago      50.1GB
@@ -81,8 +81,8 @@ alpine                                               3.16.3    bfe296a52501   17
 
 查看容器信息
 
-```bash
-:~$ docker ps
+```shell
+~$ docker ps
 CONTAINER ID   IMAGE                                                       COMMAND                  CREATED       STATUS       PORTS                                                     NAMES
 ece84213a897   registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10   "python3 /data/model…"   5 hours ago   Up 4 hours   22/tcp, 7861/tcp, 0.0.0.0:80->8501/tcp, :::80->8501/tcp   goofy_torvalds
 ```
