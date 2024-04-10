@@ -11,13 +11,12 @@ Loading Indexing Storing Querying Evaluation 即：
 indexing 阶段将 loading 阶段的 unstructured data 整理为 structured data 并将其向量化存储起来方便后续检索，即embedding data into vector store；
 querying 阶段将根据 query 返回最合适的回答
 我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。
-Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 0.2.10
-以 nvidia/cuda:12.'>
+Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到 0.2.10'>
 <title>Docker部署Langchain-Chatchat</title>
 
 <link rel='canonical' href='http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/'>
 
-<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Docker部署Langchain-Chatchat'>
+<link rel="stylesheet" href="/scss/style.min.69dcf6c889a475ad315f4e9f5bb9b5ce27a0d1eca32d6f51ca6329414c2a6fdb.css"><meta property='og:title' content='Docker部署Langchain-Chatchat'>
 <meta property='og:description' content='这一系列博客记录用 docker 部署 langchain-chatchat 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。
 Langchain-Chatchat项目介绍 根据官网介绍：Langchain-Chatchat 是基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。
 这里的 RAG 技术是为了在避免花费巨大财力人力 fine-tuning 的情况下利用知识库提高大语言模型的准确率。RAG pipeline 如下图：
@@ -28,8 +27,7 @@ Loading Indexing Storing Querying Evaluation 即：
 indexing 阶段将 loading 阶段的 unstructured data 整理为 structured data 并将其向量化存储起来方便后续检索，即embedding data into vector store；
 querying 阶段将根据 query 返回最合适的回答
 我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。
-Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 0.2.10
-以 nvidia/cuda:12.'>
+Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到 0.2.10'>
 <meta property='og:url' content='http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/'>
 <meta property='og:site_name' content='跃入间隙 | voidreamy'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='llm' /><meta property='article:tag' content='docker' /><meta property='article:published_time' content='2024-04-09T22:44:04&#43;08:00'/><meta property='article:modified_time' content='2024-04-09T22:44:04&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/e9e3a5e09211f2b6940cc15ad5b0f04e.jpg' />
@@ -44,8 +42,7 @@ Loading Indexing Storing Querying Evaluation 即：
 indexing 阶段将 loading 阶段的 unstructured data 整理为 structured data 并将其向量化存储起来方便后续检索，即embedding data into vector store；
 querying 阶段将根据 query 返回最合适的回答
 我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。
-Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 0.2.10
-以 nvidia/cuda:12."><meta name="twitter:card" content="summary_large_image">
+Docker部署流程 根据项目 wiki ，目前docker 镜像文件已经更新到 0.2.10"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/e9e3a5e09211f2b6940cc15ad5b0f04e.jpg' />
     </head>
     <body class="
@@ -419,7 +416,17 @@ Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 
     
     
     <p>这一系列博客记录用 docker 部署 <a class="link" href="https://github.com/chatchat-space/Langchain-Chatchat"  target="_blank" rel="noopener"
-    >langchain-chatchat</a> 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。</p>
+    >langchain-chatchat
+    
+    <span style="white-space: nowrap;"><svg width=".7em"
+        height=".7em" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+        <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z" fill="currentColor" />
+        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
+            fill="currentColor">
+    </svg></span>
+    
+    
+</a> 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。</p>
 <h2 id="langchain-chatchat项目介绍">Langchain-Chatchat项目介绍</h2>
 <p>根据官网介绍：Langchain-Chatchat 是基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。</p>
 <p>这里的 RAG 技术是为了在避免花费巨大财力人力 fine-tuning 的情况下利用知识库提高大语言模型的准确率。RAG pipeline 如下图：</p>
@@ -467,7 +474,17 @@ Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 
 <p>我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。</p>
 <h2 id="docker部署流程">Docker部署流程</h2>
 <p>根据项目 <a class="link" href="https://github.com/chatchat-space/Langchain-Chatchat/wiki/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2#docker-%E9%83%A8%E7%BD%B2"  target="_blank" rel="noopener"
-    >wiki</a>，目前docker 镜像文件已经更新到 <code>0.2.10</code></p>
+    >wiki
+    
+    <span style="white-space: nowrap;"><svg width=".7em"
+        height=".7em" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+        <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z" fill="currentColor" />
+        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
+            fill="currentColor">
+    </svg></span>
+    
+    
+</a>，目前docker 镜像文件已经更新到 <code>0.2.10</code></p>
 <ul>
 <li>以 <code>nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04</code> 为基础镜像</li>
 <li>该版本内置并默认启用一个 Embedding 模型：<code>bge-large-zh-v1.5</code>，内置并默认启用 <code>ChatGLM3-6B</code></li>
@@ -477,7 +494,17 @@ Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 
 <li><strong>NVIDIA Container Toolkit 安装指南</strong></li>
 </ul>
 <p><a class="link" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html"  target="_blank" rel="noopener"
-    >Installing the NVIDIA Container Toolkit — NVIDIA Container Toolkit 1.14.5 documentation</a></p>
+    >Installing the NVIDIA Container Toolkit — NVIDIA Container Toolkit 1.14.5 documentation
+    
+    <span style="white-space: nowrap;"><svg width=".7em"
+        height=".7em" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+        <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z" fill="currentColor" />
+        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
+            fill="currentColor">
+    </svg></span>
+    
+    
+</a></p>
 <p>确保前置包安装完成后即可启动镜像。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -543,7 +570,17 @@ Docker部署流程 根据项目 wiki，目前docker 镜像文件已经更新到 
 <h2 id="坑点">坑点</h2>
 <h3 id="driver-版本">Driver 版本</h3>
 <p>由于以本项目镜像以 <code>nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04</code> 为基础镜像，其中 12.*版本的 cuda 对于 driver 版本有特定要求。参考<a class="link" href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/"  target="_blank" rel="noopener"
-    ><strong>https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/</strong></a></p>
+    ><strong>https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/</strong>
+    
+    <span style="white-space: nowrap;"><svg width=".7em"
+        height=".7em" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+        <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z" fill="currentColor" />
+        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
+            fill="currentColor">
+    </svg></span>
+    
+    
+</a></p>
 <p><img src="/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-3.png"
 	width="2000"
 	height="897"
