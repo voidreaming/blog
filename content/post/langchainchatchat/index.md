@@ -13,7 +13,7 @@ image = "e9e3a5e09211f2b6940cc15ad5b0f04e.jpg"
 +++
 这一系列博客记录用 docker 部署 [langchain-chatchat](https://github.com/chatchat-space/Langchain-Chatchat) 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。
 
-# Langchain-Chatchat项目介绍
+## Langchain-Chatchat项目介绍
 
 根据官网介绍：Langchain-Chatchat 是基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。
 
@@ -45,7 +45,7 @@ querying 阶段将根据 query 返回最合适的回答
 
 我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。
 
-# Docker部署流程
+## Docker部署流程
 
 根据项目 [wiki](https://github.com/chatchat-space/Langchain-Chatchat/wiki/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2#docker-%E9%83%A8%E7%BD%B2)，目前docker 镜像文件已经更新到 `0.2.10`
 
@@ -93,7 +93,7 @@ ece84213a897   registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10   "pyth
 
 另外**API 服务 访问** http://localhost:7861/docs 
 
-# 坑点
+## 坑点
 
 ### Driver 版本
 
@@ -103,7 +103,7 @@ ece84213a897   registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10   "pyth
 
 最开始莫名其妙所有模型都跑在cpu 上，花了好长时间才排查出这个问题 TT
 
-# 学习归纳
+## 学习归纳
 
 部署过程中了解到了
 

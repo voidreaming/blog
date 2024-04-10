@@ -13,19 +13,23 @@
         <pubDate>Tue, 09 Apr 2024 22:44:04 +0800</pubDate>
         
         <guid>http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/</guid>
-        <description>&lt;img src="http://localhost:1313/e9e3a5e09211f2b6940cc15ad5b0f04e.jpg" alt="Featured image of post Docker部署Langchain-Chatchat" /&gt;&lt;p&gt;这一系列博客记录用 docker 部署 &lt;a class=&#34;link&#34; href=&#34;https://github.com/chatchat-space/Langchain-Chatchat&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/e9e3a5e09211f2b6940cc15ad5b0f04e.jpg" alt="Featured image of post Docker部署Langchain-Chatchat" /&gt;&lt;p&gt;这一系列博客记录用 docker 部署 &lt;a class=&#34;link&#34; href=&#34;https://github.com/chatchat-space/Langchain-Chatchat&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;langchain-chatchat&lt;/a&gt; 本地知识库问答系统的全部过程，包括学习记录、踩坑经验、以及优化思路。&lt;/p&gt;
-&lt;h1 id=&#34;langchain-chatchat项目介绍&#34;&gt;Langchain-Chatchat项目介绍&lt;/h1&gt;
+&lt;h2 id=&#34;langchain-chatchat项目介绍&#34;&gt;Langchain-Chatchat项目介绍&lt;/h2&gt;
 &lt;p&gt;根据官网介绍：Langchain-Chatchat 是基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。&lt;/p&gt;
 &lt;p&gt;这里的 RAG 技术是为了在避免花费巨大财力人力 fine-tuning 的情况下利用知识库提高大语言模型的准确率。RAG pipeline 如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image.png&#34;
+	width=&#34;2000&#34;
+	height=&#34;969&#34;
+	srcset=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image_hu87275b0869b3a3502fcfad91b731ea2e_163128_480x0_resize_box_3.png 480w, http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image_hu87275b0869b3a3502fcfad91b731ea2e_163128_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;206&#34;
+		data-flex-basis=&#34;495px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;参考：https://docs.llamaindex.ai/en/stable/getting_started/concepts/&lt;/p&gt;
@@ -38,21 +42,25 @@
 &lt;li&gt;&lt;strong&gt;Evaluation&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;即：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image-1.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-1.png&#34;
+	width=&#34;2000&#34;
+	height=&#34;280&#34;
+	srcset=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-1_hu6c843e73134e2dcddf3e6098f2d16900_42227_480x0_resize_box_3.png 480w, http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-1_hu6c843e73134e2dcddf3e6098f2d16900_42227_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;714&#34;
+		data-flex-basis=&#34;1714px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在 loading 阶段，structure data、unstructured data 或者 api output 被加载到统称为 document 的容器里；&lt;/p&gt;
 &lt;p&gt;indexing 阶段将 loading 阶段的 unstructured data 整理为 structured data 并将其向量化存储起来方便后续检索，即embedding data into vector store；&lt;/p&gt;
 &lt;p&gt;querying 阶段将根据 query 返回最合适的回答&lt;/p&gt;
 &lt;p&gt;我们后续分析 langchain-chatchat 项目代码会发现上述 RAG 技术的具体实现。本篇博客先记录 docker 部署过程。&lt;/p&gt;
-&lt;h1 id=&#34;docker部署流程&#34;&gt;Docker部署流程&lt;/h1&gt;
+&lt;h2 id=&#34;docker部署流程&#34;&gt;Docker部署流程&lt;/h2&gt;
 &lt;p&gt;根据项目 &lt;a class=&#34;link&#34; href=&#34;https://github.com/chatchat-space/Langchain-Chatchat/wiki/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2#docker-%E9%83%A8%E7%BD%B2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;wiki&lt;/a&gt;，目前docker 镜像文件已经更新到 &lt;code&gt;0.2.10&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -112,33 +120,41 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;上述命令中的 &lt;code&gt;-p 80:8501&lt;/code&gt; 把项目 &lt;code&gt;Chatchat WEBUI Server: [http://0.0.0.0:8501](http://0.0.0.0:8501/)&lt;/code&gt;  映射到了服务器默认 80 端口，部署成功后在浏览器打开服务器地址即可看到聊天窗口。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image-2.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-2.png&#34;
+	width=&#34;2000&#34;
+	height=&#34;1177&#34;
+	srcset=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-2_hu147cec4c74710c73755a3cc9a2b96c32_156794_480x0_resize_box_3.png 480w, http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-2_hu147cec4c74710c73755a3cc9a2b96c32_156794_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;169&#34;
+		data-flex-basis=&#34;407px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;另外&lt;strong&gt;API 服务 访问&lt;/strong&gt; http://localhost:7861/docs &lt;/p&gt;
-&lt;h1 id=&#34;坑点&#34;&gt;坑点&lt;/h1&gt;
+&lt;h2 id=&#34;坑点&#34;&gt;坑点&lt;/h2&gt;
 &lt;h3 id=&#34;driver-版本&#34;&gt;Driver 版本&lt;/h3&gt;
 &lt;p&gt;由于以本项目镜像以 &lt;code&gt;nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04&lt;/code&gt; 为基础镜像，其中 12.*版本的 cuda 对于 driver 版本有特定要求。参考&lt;a class=&#34;link&#34; href=&#34;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;strong&gt;https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/image-3.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-3.png&#34;
+	width=&#34;2000&#34;
+	height=&#34;897&#34;
+	srcset=&#34;http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-3_huff87b2e5cd0ff3a88973db70cc8da081_187178_480x0_resize_box_3.png 480w, http://localhost:1313/p/docker%E9%83%A8%E7%BD%B2langchain-chatchat/image-3_huff87b2e5cd0ff3a88973db70cc8da081_187178_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;535px&#34;
+	
 &gt;&lt;/p&gt;
 &lt;p&gt;最开始莫名其妙所有模型都跑在cpu 上，花了好长时间才排查出这个问题 TT&lt;/p&gt;
-&lt;h1 id=&#34;学习归纳&#34;&gt;学习归纳&lt;/h1&gt;
+&lt;h2 id=&#34;学习归纳&#34;&gt;学习归纳&lt;/h2&gt;
 &lt;p&gt;部署过程中了解到了&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如何用 remote-ssh连接服务器。&lt;/li&gt;
@@ -156,7 +172,7 @@
         <pubDate>Fri, 05 Apr 2024 12:20:01 +0800</pubDate>
         
         <guid>http://localhost:1313/p/mit6.s081-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01-risc-v%E5%92%8Cxv6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-        <description>&lt;img src="http://localhost:1313/img.jpg" alt="Featured image of post [mit6.s081] 操作系统01-risc-v和xv6环境搭建" /&gt;&lt;blockquote&gt;
+        <description>&lt;img src="http://localhost:1313/p/mit6.s081-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01-risc-v%E5%92%8Cxv6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/img.jpg" alt="Featured image of post [mit6.s081] 操作系统01-risc-v和xv6环境搭建" /&gt;&lt;blockquote&gt;
 &lt;p&gt;关于在Macos系统下操作系统实验环境搭建的记录。学校的OS实验仿照mit6.s081 实验，所以资料大多参考网上关于mit6.s081 lab的实验安装RISC-V编译器和工具链。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;注明：本实验默认配置好了 &lt;code&gt;vscode&lt;/code&gt; 、 &lt;code&gt;homegrew&lt;/code&gt;、 &lt;code&gt;git&lt;/code&gt; 等工具。&lt;/p&gt;
@@ -171,8 +187,8 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clone&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;recursive&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//github.com/riscv/riscv-gnu-toolchain
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;温馨提示：耗时过长，大约半小时，建议喝茶等待。&lt;/p&gt;
 &lt;p&gt;按照官方文档，接下来构建 Newlib 交叉编译器。注意到指定安装路径&lt;/p&gt;
@@ -182,8 +198,8 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;configure&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;prefix&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;usr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;local&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;opt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;riscv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gnu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;toolchain&lt;/span&gt;    &lt;span class=&#34;err&#34;&gt;#配置产物路径&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;                                                       &lt;span class=&#34;err&#34;&gt;#编译指令&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/opt/riscv-gnu-toolchain    &lt;span class=&#34;c1&#34;&gt;#配置产物路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make                                                       &lt;span class=&#34;c1&#34;&gt;#编译指令&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;注：&lt;code&gt;./configure&lt;/code&gt;: 这是一个常用的脚本，用于配置软件包的安装选项。&lt;code&gt;--prefix=/usr/local/opt/riscv-gnu-toolchain&lt;/code&gt;: 这个参数指定了安装路径。&lt;/p&gt;

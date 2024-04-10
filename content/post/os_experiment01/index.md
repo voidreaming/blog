@@ -29,7 +29,7 @@ RISC-V 是一个开源的精简指令集，其相对于主流的新x86 和 ARM �
 
 下载源码：
 
-```cpp
+```shell
 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 ```
 
@@ -37,7 +37,7 @@ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 
 按照官方文档，接下来构建 Newlib 交叉编译器。注意到指定安装路径
 
-```cpp
+```shell
 ./configure --prefix=/usr/local/opt/riscv-gnu-toolchain    #配置产物路径
 make                                                       #编译指令
 ```
